@@ -1,32 +1,36 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 
 const Header = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <img
-                            width="70%"
-                            src={logo}
-                            className="d-inline-block align-top"
-                            alt="Logo"
-                        />
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                    <Navbar.Collapse className="justify-content-end">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#home">Services</Nav.Link>
-                            <Nav.Link href="#link">About Us</Nav.Link>
-                            <Nav.Link href="#link">Contact Us</Nav.Link>
-                        </Nav>
-                        <Navbar.Text>
-                            Signed in as: <a href="#login"> Mark Otto</a>
-                        </Navbar.Text>
-                    </Navbar.Collapse>
+
+                    <Nav className="mx-auto">
+                        <Navbar.Brand href="#home">
+                            <Link to="/home">
+                                <img
+                                    width="60%"
+                                    src={logo}
+                                    className="d-inline-block align-top"
+                                    alt="Logo"
+                                />
+                            </Link>
+                            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        </Navbar.Brand>
+                        <Navbar.Collapse className="justify-content-end">
+                            <Nav.Link as={Link} to="/home#home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/home#services">Services</Nav.Link>
+                            <Nav.Link as={Link} to="/home#experts">Our Experts</Nav.Link>
+                            <Nav.Link as={Link} to="/login">LogIn</Nav.Link>
+                            <Navbar.Text>
+                                Signed in as: <a href="#login"> Mark Otto</a>
+                            </Navbar.Text>
+                        </Navbar.Collapse>
+                    </Nav>
                 </Container>
             </Navbar>
         </>

@@ -13,7 +13,7 @@ const Services = () => {
         console.log(services)
     }, [])
     return (
-        <>
+        <div id="services">
             <h1 className="text-primary py-5">Our Services</h1>
             <div className="service-container">
                 {
@@ -23,7 +23,7 @@ const Services = () => {
                     ></Service>)
                 }
             </div>
-        </>
+        </div>
     );
 };
 
